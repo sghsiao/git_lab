@@ -8,8 +8,17 @@ public class InsertionSort {
 	 * @return					the input array, sorted least to greatest
 	 */
 	public static int[] insertionSort(int[] unsortedArray) {
-		//TODO: S2 implements insertion sort
-		
-		return null;
-	}
+		  // TODO Implement insertion sort
+	  	int n = unsortedArray.length;
+	  	for (int i = 1; i < n; i++){
+			int curr = unsortedArray[i];
+		  	int j = i-1;
+		  	while (j >= 0 && unsortedArray[j] > curr){
+				unsortedArray[j+1] = unsortedArray[j];
+				j = j-1;
+		  	}
+		  	unsortedArray[j+1] = curr;
+	  	}	
+	  	return unsortedArray;
+  	}
 }
