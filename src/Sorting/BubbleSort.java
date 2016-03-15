@@ -11,14 +11,21 @@ public class BubbleSort {
 		
 		do { 
 			swapped = false;
-			for (int i = 0; i < array.length - 1; i++) {
-				if (array[i] > array[i + 1]) {
-					Sorter.swap(array, i, i+1);
+			for (int i = 0; i < unsortedArray.length - 1; i++) {
+				if (unsortedArray[i] > unsortedArray[i + 1]) {
+					swap(unsortedArray, i, i+1);
+
 					swapped = true;
 				}
 			}
 		} while (swapped);
 
-		return array;
+		return unsortedArray;
+	}
+
+	private static void swap(int array[], int a, int b) {
+		int temp = array[a];
+		array[a] = array[b];
+		array[b] = temp;
 	}
 }
